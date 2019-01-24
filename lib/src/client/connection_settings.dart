@@ -29,6 +29,9 @@ class ConnectionSettings {
   // Tuning settings
   TuningSettings tuningSettings;
 
+  // TLS settings
+  SecurityContext tlsContext;
+
   ConnectionSettings(
     {
       String this.host : "127.0.0.1"
@@ -38,6 +41,7 @@ class ConnectionSettings {
       , int this.maxConnectionAttempts : 1
       , Duration this.reconnectWaitTime : const Duration(milliseconds : 1500)
       , TuningSettings this.tuningSettings
+      , SecurityContext this.tlsContext
      }
   ){
     if( this.tuningSettings == null){
